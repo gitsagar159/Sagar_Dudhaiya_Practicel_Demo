@@ -1,0 +1,142 @@
+[
+  {
+    "stateid": "1",
+    "statename": "ANDHRA PRADESH"
+  },
+  {
+    "stateid": "2",
+    "statename": "ASSAM"
+  },
+  {
+    "stateid": "3",
+    "statename": "ARUNACHAL PRADESH"
+  },
+  {
+    "stateid": "4",
+    "statename": "BIHAR"
+  },
+  {
+    "stateid": "5",
+    "statename": "GUJRAT"
+  },
+  {
+    "stateid": "6",
+    "statename": "HARYANA"
+  },
+  {
+    "stateid": "7",
+    "statename": "HIMACHAL PRADESH"
+  },
+  {
+    "stateid": "8",
+    "statename": "JAMMU & KASHMIR"
+  },
+  {
+    "stateid": "9",
+    "statename": "KARNATAKA"
+  },
+  {
+    "stateid": "10",
+    "statename": "KERALA"
+  },
+  {
+    "stateid": "11",
+    "statename": "MADHYA PRADESH"
+  },
+  {
+    "stateid": "12",
+    "statename": "MAHARASHTRA"
+  },
+  {
+    "stateid": "13",
+    "statename": "MANIPUR"
+  },
+  {
+    "stateid": "14",
+    "statename": "MEGHALAYA"
+  },
+  {
+    "stateid": "15",
+    "statename": "MIZORAM"
+  },
+  {
+    "stateid": "16",
+    "statename": "NAGALAND"
+  },
+  {
+    "stateid": "17",
+    "statename": "ORISSA"
+  },
+  {
+    "stateid": "18",
+    "statename": "PUNJAB"
+  },
+  {
+    "stateid": "19",
+    "statename": "RAJASTHAN"
+  },
+  {
+    "stateid": "20",
+    "statename": "SIKKIM"
+  },
+  {
+    "stateid": "21",
+    "statename": "TAMIL NADU"
+  },
+  {
+    "stateid": "22",
+    "statename": "TRIPURA"
+  },
+  {
+    "stateid": "23",
+    "statename": "UTTAR PRADESH"
+  },
+  {
+    "stateid": "24",
+    "statename": "WEST BENGAL"
+  },
+  {
+    "stateid": "25",
+    "statename": "DELHI"
+  },
+  {
+    "stateid": "26",
+    "statename": "GOA"
+  },
+  {
+    "stateid": "27",
+    "statename": "PONDICHERY"
+  },
+  {
+    "stateid": "28",
+    "statename": "LAKSHDWEEP"
+  },
+  {
+    "stateid": "29",
+    "statename": "DAMAN & DIU"
+  },
+  {
+    "stateid": "30",
+    "statename": "DADRA & NAGAR"
+  },
+  {
+    "stateid": "31",
+    "statename": "CHANDIGARH"
+  },
+  {
+    "stateid": "32",
+    "statename": "ANDAMAN & NICOBAR"
+  },
+  {
+    "stateid": "33",
+    "statename": "UTTARANCHAL"
+  },
+  {
+    "stateid": "34",
+    "statename": "JHARKHAND"
+  },
+  {
+    "stateid": "35",
+    "statename": "CHATTISGARH"
+  }
+]

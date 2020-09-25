@@ -1,0 +1,127 @@
+﻿@model Sagar_Dudhaiya_Practicel_Demo.ViewModels.clsUserViewModel
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<SelectListItem> lstState = ViewBag.lstState != null ? (List<SelectListItem>)ViewBag.lstState : null;
+    List<SelectListItem> lstCity =  ViewBag.lstCity != null ? (List<SelectListItem>)ViewBag.lstCity : null;
+}
+
+@section scripts
+{
+    <script src="~/Scripts/user.js"></script>
+}
+
+<h2>Registration</h2>
+
+
+
+@using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Name</label>
+                @Html.TextBoxFor(m => m.name, new { @id = "name", @class = "form-control" })
+                <div class="invalid-feedback" style="color:red; display:none">please enter Name</div>
+            </div>
+        </div>
+        <div class="col col-lg-6">
+            <div class="input-group">
+                <label> Gender </label>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                @Html.RadioButtonFor(m => m.gender, "M", new { @id = "gender_m", @class = "form-control" }) Male
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                @Html.RadioButtonFor(m => m.gender, "F", new { @id = "gender_f", @class = "form-control" }) Female
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="invalid-feedback" style="color:red; display:none">please select Gender</div>
+            </div>
+        </div>
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Qualification</label>
+                @Html.TextBoxFor(m => m.qualification, new { @id = "qualification", @class = "form-control" })
+                <div class="invalid-feedback" style="color:red; display:none">please enter Qualification</div>
+            </div>
+        </div>
+
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Age</label>
+                @Html.TextBoxFor(m => m.age, new { @id = "age", @class = "form-control" })
+                <div class="invalid-feedback" style="color:red; display:none">please enter Age</div>
+            </div>
+        </div>
+
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Sate</label>
+                @Html.DropDownListFor(m => m.state, lstState, new { @class = "form-control" })
+                <div class="invalid-feedback" style="color:red; display:none">please select Sate</div>
+            </div>
+        </div>
+
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Sate</label>
+                @Html.DropDownListFor(m => m.city, lstCity, new { @class = "form-control" })
+                <div class="invalid-feedback" style="color:red; display:none">please select City</div>
+            </div>
+        </div>
+
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Email</label>
+                @Html.TextBoxFor(m => m.email, new { @id = "email", @class = "form-control" })
+                <div id="EmailError" class="invalid-feedback" style="color:red; display:none">please Enter Email</div>
+                <div id="InvelidEmailError" class="invalid-feedback" style="color:red; display:none">please Enter valid Email</div>
+            </div>
+        </div>
+
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Password</label>
+                @Html.TextBoxFor(m => m.password, new { @id = "password", @class = "form-control", @type = "password" })
+                <div class="invalid-feedback" style="color:red; display:none">please enter Password</div>
+            </div>
+        </div>
+
+        <div class="col col-lg-6">
+            <div class="form-group">
+                <label> Confirm Password</label>
+                @Html.TextBoxFor(m => m.confirmpassword, new { @id = "confirmpassword", @class = "form-control", @type = "password" })
+                <div id="cpasswordError" class="invalid-feedback" style="color:red; display:none">please enter Confirm Password</div>
+                <div id="InvalidcpasswordError" class="invalid-feedback" style="color:red; display:none">Password and Confirm Password not match</div>
+            </div>
+        </div>
+
+        <div class="col col-lg-6">
+            <div> 
+                <img id="user_img" height="100" width="90" style ="border:solid" / > 
+            </div>
+
+            <div class="form-group">
+                <label> Profile Pic</label>
+                <input type="file" name="profileImage" id="profileImage" onchange="show(this)" />
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="row" style="margin-top:5%">
+        <input type="submit" class="btn btn-default" id="btnSubmit" name="Sign Up" value="Sign Up" onclick="return ValidateRegistrationForm();" />
+    </div>
+}
+

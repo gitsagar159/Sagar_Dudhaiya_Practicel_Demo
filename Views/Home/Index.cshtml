@@ -1,0 +1,53 @@
+﻿@model List<Sagar_Dudhaiya_Practicel_Demo.ViewModels.clsUserViewModel>
+@using Sagar_Dudhaiya_Practicel_Demo.ViewModels;
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<clsState> lstState = ViewBag.lstState != null ? (List<clsState>)ViewBag.lstState : null;
+    List<clsCity> lstCity = ViewBag.lstCity != null ? (List<clsCity>)ViewBag.lstCity : null;
+
+}
+
+<div style="margin-top: 10%">
+    <table class="table-responsive">
+        <tr>
+            <th width="10%">Name</th>
+            <th width="10%">Gender</th>
+            <th width="20%">Qualification</th>
+            <th width="10%">Age</th>
+            <th width="10%">State</th>
+            <th width="10%">City</th>
+            <th width="10%">Email</th>
+            <th width="10%">Actions</th>
+        </tr>
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var userItem in Model)
+            {
+    <tr>
+        <td>@Html.Raw(userItem.name)</td>
+        <td>@Html.Raw(!string.IsNullOrEmpty(userItem.gender) ? userItem.gender == "M" ? "Male" : "Female" : "")</td>
+        <td>@Html.Raw(userItem.qualification)</td>
+        <td>@Html.Raw(userItem.age)</td>
+        <td>@Html.Raw(lstState.Where(s=>s.stateid == Convert.ToInt32(userItem.state)).FirstOrDefault().statename)</td>
+        <td>@Html.Raw(lstCity.Where(s => s.cityid == Convert.ToInt32(userItem.city)).FirstOrDefault().cityname)</td>
+        <td>@Html.Raw(userItem.email)</td>
+        <td>
+            @{
+                string strUserEditLink = Url.Action("EditUser", "Home", new RouteValueDictionary { { "id", userItem.userid } });
+                string strUserDeleteLink = Url.Action("DeleteUser", "Home", new RouteValueDictionary { { "id", userItem.userid } });
+            }
+            <a href="@strUserEditLink" name="Edit" title="Edit"> Edit </a> / <a href="@strUserDeleteLink" name="Delete" title="Delete" onclick="return confirm('Are you sure delete user')"> Delete </a>
+        </td>
+    </tr>
+            }
+        }
+        else
+        {
+            <tr style="margin-top:10px">
+                <td colspan="5" style="text-align:center"> No Record found </td>
+            </tr>
+        }
+    </table>
+</div>
